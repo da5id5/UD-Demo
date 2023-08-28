@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+/* css reset */
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: yellow;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+h1,
+h2 {
+font-family: 'David Libre', serif;
+font-weight: 500;
+font-size: 1.5em;
+padding: 0.5em 0;
+}
+
+h2 {font-size: 1.25em;}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: gray;
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns:
+  1fr        2fr        1fr;
+  grid-template-areas:
+  "heady     heady      heady"
+  "navvy     navvy      navvy"
+  "aside1    mainy      aside2"
+  "aside1    mainy      aside2"
+  "aside1    mainy      aside2"
+  "footy     footy      footy";
+}
+
+header {grid-area:heady; background: green;}
+nav {grid-area:navvy; background: pink;}
+main {grid-area:mainy; background: teal;}
+#aside1 {grid-area:aside1; background: goldenrod;}
+#aside2 {grid-area:aside2; background: lavender;}
+footer {grid-area:footy; background: orange;}
+
+header,
+nav,
+main,
+aside,
+footer {
+  padding: 1.5em;
+  border: 1px solid black;
+}
+
+header,
+footer {
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+/* media block table medium */
+@media screen
+and (min-width: 641px)
+and (max-width: 900px) {
+  .container {
+  grid-template-columns:
+  2fr       1fr;
+  grid-template-areas:
+  "heady     heady"
+  "navvy     navvy"
+  "mainy     mainy"
+  "mainy     mainy"
+  "aside1    aside2"
+  "footy     footy";
+} /* end container */
+} /* end table media block */
+
+/* media block mobile small */
+@media screen
+and (max-width: 640px) {
+  .container {
+  grid-template-columns:
+  1fr;
+  grid-template-areas:
+  "heady"
+  "mainy"
+  "mainy"
+  "aside1"
+  "aside2"
+  "navvy"
+  "footy";
+} /* end container */
+nav ul {
+  flex-flow: column nowrap;
+  text-align: center;
+}
+nav ul li a {
+  display: block;
+  padding: 10px 5px;
+  margin: 5px;
+  border: 1px black solid;
+  background: white;
+
+} 
+
+} /* end table media block */
